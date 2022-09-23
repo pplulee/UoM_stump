@@ -1,3 +1,3 @@
-# comp22111_igor
+# comp22111
 
-dev repo for comp22111
+repo for comp22111
