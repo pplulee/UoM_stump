@@ -9,4 +9,4 @@ simNCVerilogWriteAccess = t
 simNCVerilogConnectAccess = t 
 simNCVerilogSimBinary = strcat(CAD_REF_DIR "/Cadence/scripts/CS_ncxlmode")
 simNCVerilogScope = "test.top"
-
+simReNetlistAll = t
