@@ -1,0 +1,20 @@
+xmvlog(64): 21.03-s009: (c) Copyright 1995-2021 Cadence Design Systems, Inc.
+TOOL:	xmvlog(64)	21.03-s009: Started on Sep 20, 2022 at 10:08:57 BST
+xmvlog
+    -use5x
+    -SPECIFICUNIT emulated_uart
+    -zparse /tmp/vamsZparah0097
+    -NOWARN DLNOHV
+    -work fpga
+    -view functional
+    -nostdout
+    -logfile /home/mbassjsp/Cadence/COMP22111/.cadence/dfII/TextSupport/Logs/Parser/verilog/fpga/functional/compile5.log
+    -messages
+    -cdslib /home/mbassjsp/Cadence/COMP22111/cds.lib
+    /home/mbassjsp/Cadence/COMP22111/fpga/emulated_uart/functional/verilog.v
+
+file: /home/mbassjsp/Cadence/COMP22111/fpga/emulated_uart/functional/verilog.v
+	module fpga.emulated_uart:functional
+		errors: 0, warnings: 0
+	 writing out DPL output:
+TOOL:	xmvlog(64)	21.03-s009: Exiting on Sep 20, 2022 at 10:08:57 BST  (total: 00:00:00)

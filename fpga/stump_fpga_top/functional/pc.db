@@ -1,0 +1,65 @@
+--pcdbVlog file, Rev:1.0
+
+#CELL
+* ackie *
+ackie_interface
+
+#CELL
+* Stump *
+cpu
+
+#CELL
+* GND *
+ground_0
+ground_2
+ground_1
+
+#CELL
+* INV *
+epp_inv
+
+#CELL
+* IBUF *
+clk_buf
+keypad_buf_1<4:0> 5
+btn_buf_1
+btn_buf_0
+epp_buf_4
+epp_buf_3
+epp_buf_2
+
+#CELL
+* OBUF *
+epp_buf_0
+shaker_buf_0
+buzzer_buf_0
+lcd_buf_3<7:0> 8
+lcd_buf_2
+lcd_buf_1
+lcd_buf_0
+matrix_buf_5
+matrix_buf_4<7:0> 8
+matrix_buf_3<7:0> 8
+matrix_buf_2
+matrix_buf_1
+matrix_buf_0
+led_buf<3:0> 4
+
+#CELL
+* IOBUF *
+epp_buf_1<7:0> 8
+scl_buf_0
+sda_buf_0
+
+#CELL
+* OBUFT *
+keypad_buf_0<3:0> 4
+
+#CELL
+* memory_stump *
+memory
+
+#CELL
+* emulated_uart *
+uart
+

@@ -1,0 +1,6 @@
+//Verilog HDL for "MU0", "MU0_test" "functional"
+
+
+module MU0_test ( );
+
+endmodule

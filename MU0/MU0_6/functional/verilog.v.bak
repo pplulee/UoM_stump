@@ -1,0 +1,6 @@
+//Verilog HDL for "MU0", "MU0_6" "functional"
+
+
+module MU0_6 ( );
+
+endmodule

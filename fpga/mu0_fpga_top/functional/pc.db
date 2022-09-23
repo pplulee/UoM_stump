@@ -1,0 +1,53 @@
+--pcdbVlog file, Rev:1.0
+
+#CELL
+* ackie *
+ackie_interface
+
+#CELL
+* memory_mu0 *
+memory
+
+#CELL
+* GND *
+ground_0
+ground_2
+ground_1
+
+#CELL
+* INV *
+epp_inv
+
+#CELL
+* IBUF *
+clk_buf
+epp_buf_4
+epp_buf_3
+epp_buf_2
+
+#CELL
+* OBUF *
+epp_buf_0
+lcd_buf_3<7:0> 8
+lcd_buf_2
+lcd_buf_1
+lcd_buf_0
+matrix_buf_5
+matrix_buf_4<7:0> 8
+matrix_buf_3<7:0> 8
+matrix_buf_2
+matrix_buf_1
+matrix_buf_0
+
+#CELL
+* MU0_1 *
+cpu
+
+#CELL
+* IOBUF *
+epp_buf_1<7:0> 8
+
+#CELL
+* emulated_uart *
+uart
+

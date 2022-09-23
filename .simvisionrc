@@ -1,0 +1,7 @@
+preferences set waveform-height 12
+set A [window find -type console]
+window close [lindex $A 0]
+waveform new
+
+
+

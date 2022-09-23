@@ -1,0 +1,36 @@
+# DO NOT EDIT -- automatically generated options file -- DO NOT EDIT!!!
+return {
+  initial-zoom-out-full {1}
+  default-time-units {ns}
+  db-signal-list {}
+  txe-locate-add-fibers {1}
+  txe-navigate-search-locate {0}
+  txe-view-hold {0}
+  plugin-enable-svdatabrowser-new {1}
+  cursorctl-dont-show-sync-warning {1}
+  user-toolbar-list {}
+  toolbar-sendToIndago-WaveWindow {
+  usual
+  position -pos 1
+}
+  txe-navigate-waveform-locate {1}
+  txe-view-hidden {0}
+  toolbar-Standard-Console {
+  usual
+  position -pos 1
+}
+  txe-search-show-linenumbers {1}
+  toolbar-Search-Console {
+  usual
+  position -pos 2
+}
+  db-scope-tree {}
+  plugin-enable-groupscope {0}
+  plugin-enable-interleaveandcompare {0}
+  plugin-enable-waveformfrequencyplot {0}
+  txe-navigate-waveform-next-child {0}
+  txe-locate-scroll-x {1}
+  txe-locate-scroll-y {1}
+  txe-locate-pop-waveform {1}
+  whats-new-dont-show-at-startup {1}
+}

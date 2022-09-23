@@ -1,0 +1,11 @@
+# File Created by CSImage,,, at Fri Jul 15 13:45:51 2022
+# assisted by CdsLibEditor
+DEFINE basic $CDSDIR/tools/dfII/etc/cdslib/basic
+DEFINE US_8ths $CDSDIR/tools/dfII/etc/cdslib/sheets/US_8ths
+DEFINE xiltmp xiltmp
+DEFINE Stump Stump
+DEFINE MU0 MU0
+DEFINE fpga fpga
+DEFINE unisims unisims
+DEFINE glbl glbl
+DEFINE spartan6 /cadtools5/xil_cds_design_kits/JULY2022/spartan6

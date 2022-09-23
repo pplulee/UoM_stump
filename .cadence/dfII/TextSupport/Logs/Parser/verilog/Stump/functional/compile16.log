@@ -1,0 +1,20 @@
+xmvlog(64): 21.03-s009: (c) Copyright 1995-2021 Cadence Design Systems, Inc.
+TOOL:	xmvlog(64)	21.03-s009: Started on Jul 15, 2022 at 16:26:45 BST
+xmvlog
+    -use5x
+    -SPECIFICUNIT Stump_test
+    -zparse /tmp/vamsZparje6940
+    -NOWARN DLNOHV
+    -work Stump
+    -view functional
+    -nostdout
+    -logfile /home/csimage/Cadence/COMP22111/.cadence/dfII/TextSupport/Logs/Parser/verilog/Stump/functional/compile16.log
+    -messages
+    -cdslib /home/csimage/Cadence/COMP22111/cds.lib
+    /home/csimage/Cadence/COMP22111/Stump/Stump_test/functional/verilog.v
+
+file: /home/csimage/Cadence/COMP22111/Stump/Stump_test/functional/verilog.v
+	module Stump.Stump_test:functional
+		errors: 0, warnings: 0
+	 writing out DPL output:
+TOOL:	xmvlog(64)	21.03-s009: Exiting on Jul 15, 2022 at 16:26:45 BST  (total: 00:00:00)

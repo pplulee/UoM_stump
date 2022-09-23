@@ -1,0 +1,279 @@
+\o Program:		@(#)$CDS: libManager version 6.1.8 - CAT37 09/14/2021 20:38 (sjfhw830) $
+\o Sub version:		sub-version  s215 
+\o Arguments:		-unmapped -mpssession virtuoso200097 -mpshost E-10CKILF1603.it.manchester.ac.uk 
+\o Working Directory:	E-10CKILF1603.it.manchester.ac.uk:/home/mbassjsp/Cadence/COMP22111
+\o 64-bit offsets
+\o Qt version: 		5.9.1
+\o changeWorkingDir("/home/mbassjsp/Cadence/COMP22111") unnecessary.
+\o ddSetForcedLib("") unnecessary.
+\o Log file is "/home/mbassjsp/Cadence/COMP22111/libManager.log".
+\o Opening libManager window.
+\a nrSetWindowVisibility(cdsLibManager "show")
+\o MPS service: map window
+\o Library Manager customization server connected.
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrResizeWindow(cdsLibManager list(371 45 704 501))
+\a cdsLibManager->libListBox->value = "Stump"
+\a cdsLibManager->libLineEdit->value = "Stump"
+\a cdsLibManager->cellListBox->value = "Stump"
+\a cdsLibManager->cellLineEdit->value = "Stump"
+\a cdsLibManager->cellListBox->value = "Stump_ALU"
+\a cdsLibManager->cellLineEdit->value = "Stump_ALU"
+\a cdsLibManager->cellListBox->value = "Stump_FSM"
+\a cdsLibManager->cellLineEdit->value = "Stump_FSM"
+\a cdsLibManager->cellListBox->value = "Stump"
+\a cdsLibManager->cellLineEdit->value = "Stump"
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 62 9 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->libListBox->value = nil
+\a cdsLibManager->libLineEdit->value = ""
+\a cdsLibManager->cellListBox->value = nil
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->cellLineEdit->value = ""
+\a cdsLibManager->libListBox->value = "Stump"
+\a cdsLibManager->libLineEdit->value = "Stump"
+\a cdsLibManager->cellListBox->value = "Stump"
+\a cdsLibManager->cellLineEdit->value = "Stump"
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "Stump_ALU"
+\a cdsLibManager->cellLineEdit->value = "Stump_ALU"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 49 12 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "Stump_ALU_test"
+\a cdsLibManager->cellLineEdit->value = "Stump_ALU_test"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 45 10 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "Stump_FSM"
+\a cdsLibManager->cellLineEdit->value = "Stump_FSM"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 46 12 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "Stump_FSM_test"
+\a cdsLibManager->cellLineEdit->value = "Stump_FSM_test"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 45 12 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "Stump_control"
+\a cdsLibManager->cellLineEdit->value = "Stump_control"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 42 10 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "Stump_control_decode"
+\a cdsLibManager->cellLineEdit->value = "Stump_control_decode"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 46 16 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "Stump_datapath"
+\a cdsLibManager->cellLineEdit->value = "Stump_datapath"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 48 11 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "Stump_mux16bit"
+\a cdsLibManager->cellLineEdit->value = "Stump_mux16bit"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 34 9 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "Stump_mux16bit_test"
+\a cdsLibManager->cellLineEdit->value = "Stump_mux16bit_test"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 41 9 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "Stump_reg4bit"
+\a cdsLibManager->cellLineEdit->value = "Stump_reg4bit"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 48 12 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "Stump_reg16bit"
+\a cdsLibManager->cellLineEdit->value = "Stump_reg16bit"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 47 8 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "Stump_registers"
+\a cdsLibManager->cellLineEdit->value = "Stump_registers"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 44 9 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "Stump_shifter"
+\a cdsLibManager->cellLineEdit->value = "Stump_shifter"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 34 11 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "Stump_shifter_test"
+\a cdsLibManager->cellLineEdit->value = "Stump_shifter_test"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 45 4 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "Stump_sign_extender"
+\a cdsLibManager->cellLineEdit->value = "Stump_sign_extender"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 39 8 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "Stump_test"
+\a cdsLibManager->cellLineEdit->value = "Stump_test"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 42 6 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->libListBox->value = "fpga"
+\a cdsLibManager->libLineEdit->value = "fpga"
+\a cdsLibManager->cellLineEdit->value = ""
+\a cdsLibManager->cellListBox->value = nil
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->cellListBox->value = "ackie"
+\a cdsLibManager->cellLineEdit->value = "ackie"
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 42 8 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "emulated_uart"
+\a cdsLibManager->cellLineEdit->value = "emulated_uart"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 47 13 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "memory_mu0"
+\a cdsLibManager->cellLineEdit->value = "memory_mu0"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 62 9 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "memory_stump"
+\a cdsLibManager->cellLineEdit->value = "memory_stump"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 49 6 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "mu0_fpga_top"
+\a cdsLibManager->cellLineEdit->value = "mu0_fpga_top"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 41 8 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "stump_fpga_top"
+\a cdsLibManager->cellLineEdit->value = "stump_fpga_top"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "functional"
+\a cdsLibManager->viewLineEdit->value = "functional"
+\a lmgrLogShowPopup("mainListPopup2" 44 6 2 "functional")
+\a cdsLibManager->FileOpenButton->value = t
+\o MPS request: edit design
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetWindowVisibility(cdsLibManager "hide")
+\a _lmgrCloseIconify("cdsLibManager" 1)
+\o MPS service: shutdown
+\o libManager is exiting.
+\a exit(0)
