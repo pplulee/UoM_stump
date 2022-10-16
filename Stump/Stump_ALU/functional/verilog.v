@@ -26,16 +26,16 @@ module Stump_ALU(input wire[15:0] operand_A,        // First operand
 
     /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
     /* Declarations of any internal signals and buses used                        */
-    wire N = 1'b0;
-    wire Z = 1'b0;
-    wire V = 1'b0;
-    wire C = 1'b0;
 
     /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
     /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
     /* Verilog code                                                               */
     always @(*) begin
+        N = 1'b0;
+        Z = 1'b0;
+        V = 1'b0;
+        C = 1'b0;
         case (func)
             3'b000: //add
                 begin
@@ -45,6 +45,7 @@ module Stump_ALU(input wire[15:0] operand_A,        // First operand
                             V = 1'b1;
                         end
                     end
+                    C = result[16];
                 end
             3'b001: //add with carry
                 begin
@@ -54,12 +55,27 @@ module Stump_ALU(input wire[15:0] operand_A,        // First operand
                             V = 1'b1;
                         end
                     end
+                    C = result[16];
                 end
             3'b010: //sub
                 begin
+                    result = operand_A + (~operand_B+1);
+                    if (operand_A[15] != operand_B[15]) begin // different sign
+                        if (result[15] != operand_A[15]) begin
+                            V = 1'b1;
+                        end
+                    end
+                    C = ~result[16];
                 end
             3'b011: //sub with carry
                 begin
+                    result = operand_A + (~operand_B+1)+(~c_in);
+                    if (operand_A[15] != operand_B[15]) begin // different sign
+                        if (result[15] != operand_A[15]) begin
+                            V = 1'b1;
+                        end
+                    end
+                    C = ~result[16];
                 end
             3'b100: //and
                 begin
