@@ -95,13 +95,17 @@ module Stump_ALU(input wire[15:0] operand_A,        // First operand
                 begin
                     result = operand_A+operand_B;
                 end
+            default :
+                begin
+                    result = 0;
+                end
         endcase
         flags_out[3] = result[15];
         if (result == 0) begin // set Zero
             flags_out[2] = 1'b1;
         end
-        if (func==3'b110 | func==3'b111) begin
-            flags_out=x;
+        if (func==3'b110 | func==3'b111 || func==3'bxxx) begin
+            flags_out=4'bxxxx;
         end
     end
 
