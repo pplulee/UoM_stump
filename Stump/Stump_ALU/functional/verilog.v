@@ -89,16 +89,19 @@ module Stump_ALU(input wire[15:0] operand_A,        // First operand
                 end
             3'b110: //Memory Transfer
                 begin
-                    result = operand_A;
+                    result = operand_A+operand_B;
                 end
             3'b111: //branch
                 begin
-                    result = operand_A;
+                    result = operand_A+operand_B;
                 end
         endcase
         flags_out[3] = result[15];
         if (result == 0) begin // set Zero
             flags_out[2] = 1'b1;
+        end
+        if (func==3'b110 | func==3'b111) begin
+            flags_out=x;
         end
     end
 
