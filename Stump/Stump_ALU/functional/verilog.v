@@ -26,66 +26,66 @@ module Stump_ALU(input wire[15:0] operand_A,        // First operand
 
     /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
     /* Declarations of any internal signals and buses used                        */
-
     /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
-
+    reg[16:0] newresult;
     /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
     /* Verilog code                                                               */
     always @(*) begin
-        N = 1'b0;
-        Z = 1'b0;
-        V = 1'b0;
-        C = 1'b0;
+        flags_out = 4'b0000;
         case (func)
             3'b000: //add
                 begin
-                    result = operand_A+operand_B;
+                    newresult = operand_A+operand_B;
+                    result = newresult[15:0];
                     if (operand_A[15] == operand_B[15]) begin // same sign
                         if (result[15] != operand_A[15]) begin
-                            V = 1'b1;
+                            flags_out[1] = 1;
                         end
                     end
-                    C = result[16];
+                    flags_out[0] = newresult[16];
                 end
             3'b001: //add with carry
                 begin
-                    result = operand_A+operand_B+c_in;
+                    newresult = operand_A+operand_B+c_in;
+                    result = newresult[15:0];
                     if (operand_A[15] == operand_B[15]) begin // same sign
                         if (result[15] != operand_A[15]) begin
-                            V = 1'b1;
+                            flags_out[1] = 1;
                         end
                     end
-                    C = result[16];
+                    flags_out[0] = newresult[16];
                 end
             3'b010: //sub
                 begin
-                    result = operand_A + (~operand_B+1);
+                    newresult = operand_A+(~operand_B+1);
+                    result = newresult[15:0];
                     if (operand_A[15] != operand_B[15]) begin // different sign
                         if (result[15] != operand_A[15]) begin
-                            V = 1'b1;
+                            flags_out[1] = 1;
                         end
                     end
-                    C = ~result[16];
+                    flags_out[0] = newresult[16];
                 end
             3'b011: //sub with carry
                 begin
-                    result = operand_A + (~operand_B+1)+(~c_in);
+                    newresult = operand_A+(~operand_B+1)+(~c_in+1);
+                    result = newresult[15:0];
                     if (operand_A[15] != operand_B[15]) begin // different sign
                         if (result[15] != operand_A[15]) begin
-                            V = 1'b1;
+                            flags_out[1] = 1;
                         end
                     end
-                    C = ~result[16];
+                    flags_out[0] = newresult[16];
                 end
             3'b100: //and
                 begin
                     result = operand_A & operand_B;
-					C = csh;
+                    flags_out[0] = csh;
                 end
             3'b101: //or
                 begin
                     result = operand_A | operand_B;
-					C = csh;
+                    flags_out[0] = csh;
                 end
             3'b110: //Memory Transfer
                 begin
@@ -96,14 +96,10 @@ module Stump_ALU(input wire[15:0] operand_A,        // First operand
                     result = operand_A;
                 end
         endcase
-        N = result[15]; // set Negative
+        flags_out[3] = result[15];
         if (result == 0) begin // set Zero
-            Z = 1'b1;
+            flags_out[2] = 1'b1;
         end
-        flags_out[3] = C;
-        flags_out[2] = V;
-        flags_out[1] = Z;
-        flags_out[0] = N;
     end
 
 
