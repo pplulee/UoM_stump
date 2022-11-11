@@ -92,16 +92,16 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                         end
 
                         if (ir[15:13] == `LDST) begin
-                            mem_ren = 1'b0;
-                            men_wen = 1'b0;
-                        end
-                        else begin
+                            reg_write = 1'b1;
                             mem_ren = ~ir[11];
                             men_wen = ir[11];
                         end
-
+                        else begin
+                            mem_ren = 1'b0;
+                            men_wen = 1'b0;
+                        end
                     end
-                else begin
+                else begin // instruction=BCC
                     ext_op = 1'b1;
                     reg_write = 1'b1;
                     dest = 3'b111;
@@ -109,11 +109,22 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                     srcB = 3'bxxx;
                     shift_op = 2'bxx;
                     opB_mux_sel = 1'bx;
-                    alu_func = `ADD;
+                    alu_func = Testbranch(ir[11:8],cc) ? `ADD : 3'bxxx; // need to check
                     cc_en = 1;
                     mem_ren = 1'b0;
                     mem_wen = 1'b0;
                 end
+            end
+            `MEMORY:
+            begin
+                fetch = 1'b0;
+                execute = 1'b0;
+                memory = 1'b1;
+                reg_write = 1'b0;
+                mem_ren = ~ir[11];
+                mem_wen = ir[11];
+                cc_en = 1'bx;
+
             end
         endcase
     end
