@@ -5,6 +5,8 @@
 // Update
 
 `include "Stump/Stump_definitions.v"
+`include "Stump/Stump_datapath/functional/verilog.v"
+`include "Stump/Stump_control/functional/verilog.v"
 // 'include' definitions of function codes etc.
 
 /*----------------------------------------------------------------------------*/
@@ -24,13 +26,18 @@ module Stump (input  wire        clk,		// System clock
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 /* Declarations of any internal signals and buses used                        */
+wire execute,memory,ext_op,ppB_mux_sel,cc_en,reg_write;
+wire [1:0] shift_op;
+wire [2:0] alu_func,srcA,srcB,dest;
+wire [15:0] ir;
 
 
 
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 /* Instantiate modules here                                                   */
-
+Stump_datapath datapath (clk,rst,data_in,fetch,execute,memory,ext_op,opB_mux_sel,shift_op,alu_func,cc_en,reg_write,dest,srcA,srcB,srcC,ir,data_out,address,regC,cc);
+Stump_control control (rst,clk,cc,ir,fetch,execute,memory,ext_op,reg_write,dest,srcA,srcB,shift_op,opB_mux_sel,alu_func,cc_en,mem_ren,mem_wen);
 
 
 

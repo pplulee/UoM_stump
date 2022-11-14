@@ -95,6 +95,7 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                             reg_write = 1'b1;
                             mem_ren = ~ir[11];
                             men_wen = ir[11];
+                            cc_en = 1'b0;
                         end
                         else begin
                             mem_ren = 1'b0;
@@ -120,15 +121,17 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                 fetch = 1'b0;
                 execute = 1'b0;
                 memory = 1'b1;
+                ext_op = 1'b0;
                 reg_write = 1'b0;
-                mem_ren = ~ir[11];
-                mem_wen = ir[11];
-                cc_en = 1'b0;
                 dest = ir[10:8];
                 srcA = 3'b111;
                 srcB = 3'bxxx;
                 shift_op = 2'b00;
                 opB_mux_sel = 1'b0;
+                cc_en = 1'b0;
+                alu_func = 3'bxxx;
+                mem_ren = ~ir[11];
+                mem_wen = ir[11];
             end
         endcase
     end
