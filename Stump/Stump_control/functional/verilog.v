@@ -8,6 +8,8 @@
 
 
 `include "Stump/Stump_definitions.v"
+`include "Stump/Stump_FSM/functional/verilog.v"
+`include "Stump/Stump_control_decode/functional/verilog.v"
 
 /*----------------------------------------------------------------------------*/
 
@@ -39,6 +41,11 @@ module Stump_control(input  wire		rst,
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 /* Instantiate modules                                                        */
+Stump_FSM 		stump_fsm (rst, clk, cc, ir, execute);
+Stump_control_decode 	stump_control_decode (rst, clk, ir, fetch, execute, memory, ext_op, reg_write, dest, srcA, srcB, shift_op, opB_mux_sel, alu_func, cc_en, mem_ren, mem_wen);
+always @(posedge clk ,posedge rst) begin
+
+end
 
      
      

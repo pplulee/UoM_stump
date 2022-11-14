@@ -105,12 +105,12 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                     ext_op = 1'b1;
                     reg_write = 1'b1;
                     dest = 3'b111;
-                    srcA = 3'b111;
+                    srcA = Testbranch(ir[11:8],cc)?3'b111:3'bxxx;
                     srcB = 3'bxxx;
                     shift_op = 2'bxx;
                     opB_mux_sel = 1'bx;
-                    alu_func = Testbranch(ir[11:8],cc) ? `ADD : 3'bxxx; // need to check
-                    cc_en = 1;
+                    alu_func = `BCC;
+                    cc_en = 1'b1;
                     mem_ren = 1'b0;
                     mem_wen = 1'b0;
                 end
@@ -123,8 +123,12 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                 reg_write = 1'b0;
                 mem_ren = ~ir[11];
                 mem_wen = ir[11];
-                cc_en = 1'bx;
-
+                cc_en = 1'b0;
+                dest = ir[10:8];
+                srcA = 3'b111;
+                srcB = 3'bxxx;
+                shift_op = 2'b00;
+                opB_mux_sel = 1'b0;
             end
         endcase
     end
