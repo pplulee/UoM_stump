@@ -50,7 +50,7 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                 execute = 1'b0;
                 memory = 1'b0;
                 ext_op = 1'bx;
-                reg_write = 1'bx;
+                reg_write = 1'b1;
                 dest = 3'b111; // PC
                 srcA = 3'b111; // PC
                 srcB = 3'bxxx;
@@ -66,11 +66,11 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                 fetch = 1'b0;
                 execute = 1'b1;
                 memory = 1'b0;
+                reg_write = 1'b1;
                 if (ir[15:13] != `BCC)
                     begin
-                        if (ir[12]) begin // type1
+                        if (~ir[12]) begin // type1
                             ext_op = 1'b0;
-                            reg_write = 1'b1;
                             dest = ir[10:8];
                             srcA = ir[7:5];
                             srcB = ir[4:2];
@@ -81,7 +81,6 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                         end
                         else begin // type2
                             ext_op = 1'b1;
-                            reg_write = 1'b1;
                             dest = ir[10:8];
                             srcA = ir[7:5];
                             srcB = 3'bxxx;
@@ -92,14 +91,14 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                         end
 
                         if (ir[15:13] == `LDST) begin
-                            reg_write = 1'b1;
                             mem_ren = ~ir[11];
-                            men_wen = ir[11];
+                            mem_wen = ir[11];
                             cc_en = 1'b0;
                         end
                         else begin
                             mem_ren = 1'b0;
-                            men_wen = 1'b0;
+                            mem_wen = 1'b0;
+
                         end
                     end
                 else begin // instruction=BCC
@@ -122,16 +121,41 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                 execute = 1'b0;
                 memory = 1'b1;
                 ext_op = 1'b0;
-                reg_write = 1'b0;
-                dest = ir[10:8];
-                srcA = 3'b111;
-                srcB = 3'bxxx;
+                if (ir[11]) begin
+                    dest = 3'bxxx;
+                    srcA = ir[10:8];
+                    srcB = 3'bxxx;
+                    reg_write = 1'b0;
+                end
+                else begin
+                    dest = ir[10:8];
+                    srcA = 3'bxxx;
+                    srcB = 3'bxxx;
+                    reg_write = 1'b1;
+                end
                 shift_op = 2'b00;
                 opB_mux_sel = 1'b0;
                 cc_en = 1'b0;
                 alu_func = 3'bxxx;
                 mem_ren = ~ir[11];
                 mem_wen = ir[11];
+            end
+            default :
+            begin
+                fetch = 1'bx;
+                execute = 1'bx;
+                memory = 1'bx;
+                ext_op = 1'bx;
+                reg_write = 1'bx;
+                dest = 3'bxxx;
+                srcA = 3'bxxx;
+                srcB = 3'bxxx;
+                shift_op = 2'bxx;
+                opB_mux_sel = 1'bx;
+                alu_func = 3'bxxx;
+                cc_en = 1'bx;
+                mem_ren = 1'bx;
+                mem_wen = 1'bx;
             end
         endcase
     end
