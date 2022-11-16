@@ -80,11 +80,11 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                             cc_en = ir[11];
                         end
                         else begin // type2
-                            ext_op = 1'b1;
+                            ext_op = 1'b0;
                             dest = ir[10:8];
                             srcA = ir[7:5];
                             srcB = 3'bxxx;
-                            shift_op = 2'bxx;
+                            shift_op = 2'b00;
                             opB_mux_sel = 1'b1;
                             alu_func = ir[15:13];
                             cc_en = ir[11];
@@ -105,7 +105,7 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                     ext_op = 1'b1;
                     reg_write = 1'b1;
                     dest = 3'b111;
-                    srcA = Testbranch(ir[11:8],cc)?3'b111:3'bxxx;
+                    srcA = Testbranch(ir[11:8], cc) ? 3'b111 : 3'bxxx;
                     srcB = 3'bxxx;
                     shift_op = 2'bxx;
                     opB_mux_sel = 1'bx;
@@ -140,23 +140,23 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                 mem_ren = ~ir[11];
                 mem_wen = ir[11];
             end
-            default :
-            begin
-                fetch = 1'bx;
-                execute = 1'bx;
-                memory = 1'bx;
-                ext_op = 1'bx;
-                reg_write = 1'bx;
-                dest = 3'bxxx;
-                srcA = 3'bxxx;
-                srcB = 3'bxxx;
-                shift_op = 2'bxx;
-                opB_mux_sel = 1'bx;
-                alu_func = 3'bxxx;
-                cc_en = 1'bx;
-                mem_ren = 1'bx;
-                mem_wen = 1'bx;
-            end
+            default:
+                begin
+                    fetch = 1'bx;
+                    execute = 1'bx;
+                    memory = 1'bx;
+                    ext_op = 1'bx;
+                    reg_write = 1'bx;
+                    dest = 3'bxxx;
+                    srcA = 3'bxxx;
+                    srcB = 3'bxxx;
+                    shift_op = 2'bxx;
+                    opB_mux_sel = 1'bx;
+                    alu_func = 3'bxxx;
+                    cc_en = 1'bx;
+                    mem_ren = 1'bx;
+                    mem_wen = 1'bx;
+                end
         endcase
     end
 
