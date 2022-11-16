@@ -8,8 +8,8 @@
 
 
 `include "Stump/Stump_definitions.v"
-//`include "Stump/Stump_FSM/functional/verilog.v"
-//`include "Stump/Stump_control_decode/functional/verilog.v"
+`include "Stump/Stump_FSM/functional/verilog.v"
+`include "Stump/Stump_control_decode/functional/verilog.v"
 
 /*----------------------------------------------------------------------------*/
 
