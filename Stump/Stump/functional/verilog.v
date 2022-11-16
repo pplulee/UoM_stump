@@ -5,8 +5,8 @@
 // Update
 
 `include "Stump/Stump_definitions.v"
-`include "Stump/Stump_datapath/functional/verilog.v"
-`include "Stump/Stump_control/functional/verilog.v"
+//`include "Stump/Stump_datapath/functional/verilog.v"
+//`include "Stump/Stump_control/functional/verilog.v"
 // 'include' definitions of function codes etc.
 
 /*----------------------------------------------------------------------------*/

@@ -70,7 +70,7 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                 if (ir[15:13] != `BCC)
                     begin
                         if (~ir[12]) begin // type1
-                            ext_op = 1'b0;
+                            ext_op = 1'bx;
                             dest = ir[10:8];
                             srcA = ir[7:5];
                             srcB = ir[4:2];
