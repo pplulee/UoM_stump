@@ -4,3 +4,11 @@
 * Stump_registers *
 registers
 
+#CELL
+* Stump_ALU *
+alu
+
+#CELL
+* Stump_shifter *
+shifter
+

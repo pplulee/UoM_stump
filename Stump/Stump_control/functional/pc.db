@@ -1,2 +1,10 @@
 --pcdbVlog file, Rev:1.0
 
+#CELL
+* Stump_control_decode *
+decoder
+
+#CELL
+* Stump_FSM *
+fsm
+

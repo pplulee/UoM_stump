@@ -1,2 +1,10 @@
 --pcdbVlog file, Rev:1.0
 
+#CELL
+* Stump_control *
+control
+
+#CELL
+* Stump_datapath *
+datapath
+
