@@ -105,14 +105,14 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                     end
                 else begin // instruction=BCC
                     ext_op = 1'b1;
-                    reg_write = 1'b1;
-                    dest = 3'b111;
-                    srcA = Testbranch(ir[11:8], cc) ? 3'b111 : 3'bxxx;
+                    reg_write = Testbranch(ir[11:8], cc);
+                    dest = Testbranch(ir[11:8], cc) ? 3'b111 : 3'bxxx;
+                    srcA = 3'b111;
                     srcB = 3'bxxx;
                     shift_op = 2'b00;
                     opB_mux_sel = 1'b1;
                     alu_func = `BCC;
-                    cc_en = 1'b1;
+                    cc_en = 1'b0;
                     mem_ren = 1'b0;
                     mem_wen = 1'b0;
                 end
