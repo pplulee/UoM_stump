@@ -67,6 +67,7 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                 execute = 1'b1;
                 memory = 1'b0;
                 reg_write = 1'b1;
+                cc_en = 1'b1;
                 if (ir[15:13] != `BCC)
                     begin
                         if (~ir[12]) begin // type1
@@ -93,7 +94,9 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                         if (ir[15:13] == `LDST) begin
                             mem_ren = ~ir[11];
                             mem_wen = ir[11];
+                            shift_op = 2'b00;
                             cc_en = 1'b0;
+                            reg_write = ~ir[11];
                         end
                         else begin
                             mem_ren = 1'b0;
@@ -106,8 +109,8 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                     dest = 3'b111;
                     srcA = Testbranch(ir[11:8], cc) ? 3'b111 : 3'bxxx;
                     srcB = 3'bxxx;
-                    shift_op = 2'bxx;
-                    opB_mux_sel = 1'bx;
+                    shift_op = 2'b00;
+                    opB_mux_sel = 1'b1;
                     alu_func = `BCC;
                     cc_en = 1'b1;
                     mem_ren = 1'b0;
@@ -120,15 +123,15 @@ module Stump_control_decode(input wire[1:0] state,      // current state of FSM
                 execute = 1'b0;
                 memory = 1'b1;
                 ext_op = 1'bx;
-                if (ir[11]) begin
-                    dest = ir[7:5];
-                    srcA = 3'bxxx;
+                if (ir[11]) begin //store
+                    dest = 3'bxxx;
+                    srcA = ir[10:8];
                     srcB = 3'bxxx;
                     reg_write = 1'b0;
                 end
-                else begin
-                    dest = 3'bxxx;
-                    srcA = ir[10:8];
+                else begin //load
+                    dest = ir[10:8];
+                    srcA = 3'bxxx;
                     srcB = 3'bxxx;
                     reg_write = 1'b1;
                 end
