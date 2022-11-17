@@ -39,14 +39,8 @@ wire [1:0] state;
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 /* Instantiate modules                                                        */
-Stump_FSM FSM (clk,rst,ir,state);
-Stump_control_decode control_decode (state,cc,ir,fetch,execute,memory,ext_op,reg_write,dest,srcA,srcB,shift_op,opB_mux_sel,alu_func,cc_en,mem_ren,mem_wen);
-
-     
-     
-     
-     
-     
+Stump_FSM FSM (.clk(clk),.rst(rst),.ir(ir),.state(state));
+Stump_control_decode control_decode (.state(state),.cc(cc),.ir(ir),.fetch(fetch),.execute(execute),.memory(memory),.ext_op(ext_op),.reg_write(reg_write),.dest(dest),.srcA(srcA),.srcB(srcB),.shift_op(shift_op),.opB_mux_sel(opB_mux_sel),.alu_func(alu_func),.cc_en(cc_en),.mem_ren(mem_ren),.mem_wen(mem_wen));
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
 

@@ -5,13 +5,13 @@
 module Stump_datapath (input  wire        clk, 			// System clock
                        input  wire        rst,			// Master reset
                        input  wire [15:0] data_in,		// Data from memory
-                       input  wire        fetch,		// State from control
+                       input  wire        fetch,		// State from control	
                        input  wire        execute,		// State from control
                        input  wire        memory,		// State from control
                        input  wire        ext_op,		// sign extender control
                        input  wire        opB_mux_sel,	        // src_B mux control
                        input  wire [ 1:0] shift_op,		// shift operation
-                       input  wire [ 2:0] alu_func,		// ALU function
+                       input  wire [ 2:0] alu_func,		// ALU function 
                        input  wire        cc_en,		// Status register enable
                        input  wire        reg_write,	        // Register bank write
                        input  wire [ 2:0] dest,			// Register bank dest reg
@@ -38,12 +38,12 @@ Stump_registers registers (.clk(clk),
                            .write_en(reg_write),
                            .write_addr(dest),
                            .write_data(reg_data),
-                           .read_addr_A(srcA),
+                           .read_addr_A(srcA), 
                            .read_data_A(regA),
-                           .read_addr_B(srcB),
+                           .read_addr_B(srcB), 
                            .read_data_B(regB),
-                           .read_addr_C(srcC), 		// Debug port address
-                           .read_data_C(regC));		// Debug port data
+                           .read_addr_C(srcC), 		// Debug port address 
+                           .read_data_C(regC));		// Debug port data    
 
 
 Stump_shifter shifter(.shift_op(shift_op), .operand_A(regA), .c_in(cc[0]), .shift_out(operand_A), .c_out(csh));
