@@ -1,17 +1,6 @@
 // Stump Datapath
-// Implement your Stump datapath in structural Verilog here, no control block
-//
-// Created by Paul W Nutter, Feb 2015
-//
-// ** Update this header **
-
-// 'include' definitions of function codes etc.
-
-`include "Stump/Stump_definitions.v"
-
-// Main module
-/*----------------------------------------------------------------------------*/
-
+// Implement your Stump datapath for COMP22111, 2022, no control block
+// 
 
 module Stump_datapath (input  wire        clk, 			// System clock
                        input  wire        rst,			// Master reset
@@ -29,23 +18,20 @@ module Stump_datapath (input  wire        clk, 			// System clock
                        input  wire [ 2:0] srcA,			// Source A from reg bank
                        input  wire [ 2:0] srcB,			// Source B from reg bank
                        input  wire [ 2:0] srcC,			// Used by Perentie
-                       output wire [15:0] ir,			// IR contents for control
+                       output reg [15:0] ir,			// IR contents for control
                        output wire [15:0] data_out,		// Data to memory
                        output wire [15:0] address,		// Address
                        output wire [15:0] regC,			// Used by Perentie
-                       output wire [ 3:0] cc);	 		// Flags
+                       output reg [ 3:0] cc);	 		// Flags
 
 
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
-/* Declarations of any internal signals and buses used                        */
-
-
-
-
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
-/* Instantiate register bank                                                  */
+wire [15:0] reg_data;
+wire [15:0] regA, regB;
+wire [15:0] alu_out;
+wire [15:0] operand_A;
+wire [15:0] operand_B;
+wire [3:0] alu_flags;
+reg  [15:0] addr_reg;
 
 Stump_registers registers (.clk(clk),
                            .rst(rst),
@@ -59,18 +45,20 @@ Stump_registers registers (.clk(clk),
                            .read_addr_C(srcC), 		// Debug port address 
                            .read_data_C(regC));		// Debug port data    
 
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
-/* Instantiate other datapath modules here                                    */
-
+Stump_shifter shifter(.shift_op(shift_op), .operand_A(regA), .c_in(cc[0]), .shift_out(operand_A), .c_out(csh));
+Stump_ALU alu(.operand_A(operand_A), .operand_B(operand_B), .result(alu_out), .flags_out(alu_flags), .func(alu_func), .csh(csh), .c_in(cc[0]));
 
 
+always @(posedge clk) if(fetch) ir <= data_in;
+always @(posedge clk) if(cc_en) cc <= alu_flags;
+always @(posedge clk) if(execute) addr_reg <=  alu_out;
 
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+assign reg_data = memory ? data_in : alu_out;
+assign operand_B = fetch ? 1 : (opB_mux_sel && ext_op) ? {{8{ir[7]}}, ir[7:0]} : opB_mux_sel ? {{11{ir[4]}}, ir[4:0]} : regB;
+assign data_out = regA;
+assign address = memory ? addr_reg : regA;
 
-
-/*----------------------------------------------------------------------------*/
 
 endmodule
 

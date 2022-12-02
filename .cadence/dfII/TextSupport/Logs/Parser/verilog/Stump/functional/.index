@@ -32,3 +32,9 @@
 /home/mbassjsp/Cadence/COMP22111/Stump/Stump_shifter_test/functional/verilog.v .cadence/dfII/TextSupport/Logs/Parser/verilog/Stump/functional/compile31.log
 /home/mbassjsp/Cadence/COMP22111/Stump/Stump_sign_extender/functional/verilog.v .cadence/dfII/TextSupport/Logs/Parser/verilog/Stump/functional/compile32.log
 /home/mbassjsp/Cadence/COMP22111/Stump/Stump_test/functional/verilog.v .cadence/dfII/TextSupport/Logs/Parser/verilog/Stump/functional/compile33.log
+/home/j36001zl/Cadence/COMP22111/Stump/Stump/functional/verilog.v .cadence/dfII/TextSupport/Logs/Parser/verilog/Stump/functional/compile34.log
+/home/j36001zl/Cadence/COMP22111/Stump/Stump_ALU/functional/verilog.v .cadence/dfII/TextSupport/Logs/Parser/verilog/Stump/functional/compile35.log
+/home/j36001zl/Cadence/COMP22111/Stump/Stump_datapath/functional/verilog.v .cadence/dfII/TextSupport/Logs/Parser/verilog/Stump/functional/compile36.log
+/home/j36001zl/Cadence/COMP22111/Stump/Stump_control_decode/functional/verilog.v .cadence/dfII/TextSupport/Logs/Parser/verilog/Stump/functional/compile37.log
+/home/j36001zl/Cadence/COMP22111/Stump/Stump_FSM/functional/verilog.v .cadence/dfII/TextSupport/Logs/Parser/verilog/Stump/functional/compile38.log
+/home/j36001zl/Cadence/COMP22111/Stump/Stump_control/functional/verilog.v .cadence/dfII/TextSupport/Logs/Parser/verilog/Stump/functional/compile39.log

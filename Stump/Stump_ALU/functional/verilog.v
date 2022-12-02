@@ -6,23 +6,15 @@
 // ** Update this header **
 //
 
-`include "Stump/Stump_definitions.v"
-
-// 'include' definitions of function codes etc.
-// e.g. can use "`ADD" instead of "'h0" to aid readability
-// Substitute your own definitions if you prefer by
-// modifying Stump_definitions.v
-
-/*----------------------------------------------------------------------------*/
 // Stump ALU
 
 
-module Stump_ALU (input  wire [15:0] operand_A,
-                                 input  wire [15:0] operand_B,
-		                          input  wire [ 2:0] func,
-		                          input  wire        c_in,
-		                          input  wire        csh,
-		                          output wire  [15:0] result,
+module Stump_ALU (input  wire [15:0] operand_A,	
+                                 input  wire [15:0] operand_B,	
+		                          input  wire [ 2:0] func,	
+		                          input  wire        c_in,	
+		                          input  wire        csh,  	
+		                          output wire  [15:0] result,	
 		                          output wire  [ 3:0] flags_out);
 
 wire [16:0] U;
@@ -47,6 +39,9 @@ assign result = (func==4) ? D : (func==5) ? E : T;
 
 
 endmodule
+
+/*============================================================================*/
+
 
 /*============================================================================*/
 

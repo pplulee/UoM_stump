@@ -7,7 +7,7 @@
 // Created by Paul W Nutter
 //
 // April 2019
-//
+// 
 
 `include "Stump/Stump_definitions.v"
 // 'include' definitions of function codes etc.
